@@ -12,6 +12,7 @@ resource "aws_cloudwatch_event_rule" "populate_target_group" {
   description         = "Runs the NLB target group configurer every minute"
   schedule_expression = "rate(1 minute)"
   is_enabled          = true
+  tags                = var.tags
 }
 
 resource "aws_cloudwatch_event_target" "populate_target_group" {

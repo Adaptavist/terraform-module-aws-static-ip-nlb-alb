@@ -22,8 +22,8 @@ module "nlb-target-group-configurer" {
   role_name   = "nlb-target-group-configurer-role"
   //attach_network_policy         = true
   attach_cloudwatch_logs_policy = true
-  attach_policy                 = true
-  policy                        = aws_iam_policy.populate_target_group.arn
+  attach_policies               = true
+  policies                      = [aws_iam_policy.populate_target_group.arn, module.aws-s3-encrypted-private.s3_write_policy_arn]
 
   environment_variables = {
     ALB_DNS_NAME                      = var.alb_dns_name

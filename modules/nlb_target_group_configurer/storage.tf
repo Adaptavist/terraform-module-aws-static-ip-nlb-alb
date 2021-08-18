@@ -6,4 +6,6 @@ module "aws-s3-encrypted-private" {
   use_bucket_suffix_as_name = true
   kms_user_role_arns        = [module.nlb-target-group-configurer.lambda_role_arn]
   kms_admin_role_arns       = []
+
+  tags = var.tags
 }

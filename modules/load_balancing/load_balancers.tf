@@ -18,13 +18,14 @@ resource "aws_alb" "private" {
 }
 
 resource "aws_lb" "nlb" {
-  # checkov:skip=CKV_AWS_131 - Skipping `Ensure that ALB drops HTTP headers` check. Only valid for Load Balancers of type application.
+  # checkov:skip=CKV_AWS_131:Skipping `Ensure that ALB drops HTTP headers` check. Only valid for Load Balancers of type application.
   # checkov:skip=CKV_AWS_150:not a company policy
   name               = "${var.name}-public-nlb"
   internal           = false
   load_balancer_type = "network"
 
-  enable_deletion_protection = var.deletion_protection_enabled
+  enable_deletion_protection       = var.deletion_protection_enabled
+  enable_cross_zone_load_balancing = true
 
   access_logs {
     bucket  = module.aws-s3-alb-logs.bucket_id

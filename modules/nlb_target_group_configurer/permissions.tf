@@ -1,14 +1,12 @@
 data "aws_iam_policy_document" "populate_target_group" {
+  # checkov:skip=CKV_AWS_111:putMetricData is available on all resources
   statement {
     actions = [
-      "s3:Get*",
-      "s3:PutObject",
-      "s3:CreateBucket",
       "s3:ListBucket",
       "s3:ListAllMyBuckets",
     ]
 
-    resources = ["*"]
+    resources = [module.aws-s3-encrypted-private.bucket_arn]
     effect    = "Allow"
     sid       = "S3"
   }
@@ -20,7 +18,7 @@ data "aws_iam_policy_document" "populate_target_group" {
       "elasticloadbalancing:DeregisterTargets",
     ]
 
-    resources = ["*"]
+    resources = [var.alb_arn, var.nlb_arn]
     effect    = "Allow"
     sid       = "ELB"
   }

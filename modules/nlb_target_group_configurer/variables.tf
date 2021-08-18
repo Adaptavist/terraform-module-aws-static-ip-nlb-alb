@@ -8,6 +8,16 @@ variable "name" {
   description = "Namespace, which could be project name or abbreviation"
 }
 
+variable "alb_arn" {
+  type        = string
+  description = "ALB arn"
+}
+
+variable "nlb_arn" {
+  type        = string
+  description = "NLB arn"
+}
+
 variable "alb_dns_name" {
   type        = string
   description = "DNS name of the internal ALB"
