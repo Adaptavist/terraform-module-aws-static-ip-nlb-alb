@@ -14,13 +14,8 @@ variable "alb_sg_id" {
 }
 
 variable "tags" {
-  type        = list(string)
-  description = "List of tags that should be applied to all resources"
-}
-
-variable "namespace" {
-  type        = string
-  description = "Namespace, which could be project name or abbreviation"
+  type        = map(string)
+  description = "Map of tags that should be applied to all resources"
 }
 
 variable "name" {

@@ -1,8 +1,7 @@
 module "load_balancers" {
   source = "./modules/load_balancing"
 
-  name      = var.name
-  namespace = var.namespace
+  name = var.name
 
   vpc_id          = var.vpc_id
   private_subnets = var.private_subnets
@@ -17,9 +16,15 @@ module "load_balancers" {
 module "nlb_configurer" {
   source = "./modules/nlb_target_group_configurer"
 
-  alb_dns_name         = module.load_balancers.alb_dbs_name
-  alb_listener_port    = 443
-  nlb_target_group_arn = module.load_balancers.nlb_target_group_arn
-  tags                 = var.tags
+  name                              = var.name
+
+  alb_dns_name                      = module.load_balancers.internal_alb_dns_name
+  alb_listener_port                 = 443
+  nlb_target_group_arn              = module.load_balancers.nlb_target_group_arn
+
+  invocations_before_deregistration = var.invocations_before_deregistration
+  max_lookup_per_invocation         = var.max_lookup_per_invocation
+
+  tags                              = var.tags
 }
 

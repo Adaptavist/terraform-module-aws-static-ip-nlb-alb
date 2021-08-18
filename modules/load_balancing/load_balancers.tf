@@ -1,6 +1,6 @@
 resource "aws_alb" "private" {
   # checkov:skip=CKV_AWS_150:not a company policy
-  name                       = "data-ingestion-gateway"
+  name                       = "${var.name}-private-alb"
   internal                   = true
   security_groups            = [var.alb_sg_id]
   subnets                    = var.private_subnets
@@ -24,7 +24,6 @@ resource "aws_lb" "nlb" {
   internal           = false
   load_balancer_type = "network"
 
-  subnets                    = var.public_subnets
   enable_deletion_protection = var.deletion_protection_enabled
 
   access_logs {
@@ -71,9 +70,4 @@ resource "aws_lb_listener" "nlb-default" {
     target_group_arn = aws_lb_target_group.nlb-default.arn
     type             = "forward"
   }
-}
-
-resource "aws_lb_target_group_attachment" "nlb_to_alb" {
-  target_group_arn = aws_lb_target_group.nlb-default.arn
-  target_id        = aws_alb.private.id
 }

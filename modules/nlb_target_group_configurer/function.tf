@@ -9,14 +9,14 @@ module "nlb-target-group-configurer" {
   source  = "terraform-aws-modules/lambda/aws"
   version = "2.1.0"
 
-  function_name = "nlb-target-0group-configurer"
-  handler       = "index.lambda_handler"
+  function_name = "nlb-target-group-configurer"
+  handler       = "populate_NLB_TG_with_ALB.lambda_handler"
   runtime       = "python3.8"
   description   = "Populates NLB target groups with ALB dynamic IPs"
   timeout       = 300
 
   create_package         = false
-  local_existing_package = "populate_NLB_TG_with_ALB_python3.zip"
+  local_existing_package = "${path.module}/populate_NLB_TG_with_ALB_python3.zip"
 
   create_role = true
   role_name   = "nlb-target-group-configurer-role"
@@ -27,7 +27,7 @@ module "nlb-target-group-configurer" {
 
   environment_variables = {
     ALB_DNS_NAME                      = var.alb_dns_name
-    ALB_LISTENER                      = var.alb_listener
+    ALB_LISTENER                      = var.alb_listener_port
     S3_BUCKET                         = module.aws-s3-encrypted-private.bucket_name
     NLB_TG_ARN                        = var.nlb_target_group_arn
     MAX_LOOKUP_PER_INVOCATION         = var.max_lookup_per_invocation
@@ -39,7 +39,7 @@ module "nlb-target-group-configurer" {
   //vpc_security_group_ids = []
 
   use_existing_cloudwatch_log_group = false
-  cloudwatch_logs_kms_key_id        = aws_kms_key.function.arn
+  //cloudwatch_logs_kms_key_id        = aws_kms_key.function.arn
   cloudwatch_logs_retention_in_days = 14
 
   tags = var.tags

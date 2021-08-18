@@ -14,14 +14,8 @@ variable "alb_sg_id" {
 }
 
 variable "tags" {
-  type        = list(string)
-  description = "List of tags that should be applied to all resources"
-}
-
-variable "namespace" {
-  type        = string
-  default     = null
-  description = "Namespace, which could be project name or abbreviation"
+  type        = map(string)
+  description = "Map of tags that should be applied to all resources"
 }
 
 variable "name" {
@@ -37,4 +31,16 @@ variable "deletion_protection_enabled" {
 variable "vpc_id" {
   type        = string
   description = "VPC that will host this solution"
+}
+
+variable "max_lookup_per_invocation" {
+  default     = 50
+  type        = number
+  description = "The max times of DNS look per invocation."
+}
+
+variable "invocations_before_deregistration" {
+  default     = 3
+  type        = number
+  description = "The number of required Invocations before an IP address is de-registered."
 }
