@@ -19,7 +19,7 @@ https://aws.amazon.com/blogs/networking-and-content-delivery/using-static-ip-add
 | alb\_sg\_id | ALB security group id | `string` | n/a | yes |
 | deletion\_protection\_enabled | Indicates if load balancers can be deleted | `bool` | n/a | yes |
 | invocations\_before\_deregistration | The number of required Invocations before an IP address is de-registered. | `number` | `3` | no |
-| max\_lookup\_per\_invocation | The max times of DNS look per invocation. | `number` | `50` | no |
+| max\_lookup\_per\_invocation | The max times of DNS lookup per invocation. | `number` | `50` | no |
 | name | Solution name | `string` | n/a | yes |
 | private\_subnets | List of private subnet ids | `list(string)` | n/a | yes |
 | public\_subnets | List of public subnet ids | `list(string)` | n/a | yes |

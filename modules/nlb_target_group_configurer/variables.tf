@@ -25,7 +25,7 @@ variable "nlb_target_group_arn" {
 
 variable "max_lookup_per_invocation" {
   type        = number
-  description = "The max times of DNS look per invocation."
+  description = "The max times of DNS lookup per invocation."
 }
 
 variable "invocations_before_deregistration" {
