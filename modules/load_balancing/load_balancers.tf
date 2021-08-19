@@ -35,7 +35,7 @@ resource "aws_lb" "nlb" {
   }
 
   dynamic "subnet_mapping" {
-    for_each = zipmap(var.public_subnets, aws_eip.elastic-ips.*.allocation_id)
+    for_each = zipmap(var.public_subnets, aws_eip.elastic-ips.*.id)
     content {
       subnet_id     = subnet_mapping.key
       allocation_id = subnet_mapping.value
