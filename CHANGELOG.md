@@ -1,3 +1,10 @@
+## [1.0.3](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/compare/v1.0.2...v1.0.3) (2021-08-19)
+
+
+### Bug Fixes
+
+* sorted elastic ip assignment ([2967c46](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/commits/2967c4666284ecc8d37f6891ba8f79bf19df2914))
+
 ## [1.0.2](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/compare/v1.0.1...v1.0.2) (2021-08-19)
 
 
