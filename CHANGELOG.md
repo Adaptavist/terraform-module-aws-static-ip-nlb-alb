@@ -1,3 +1,10 @@
+## [1.0.1](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/compare/v1.0.0...v1.0.1) (2021-08-19)
+
+
+### Bug Fixes
+
+* semantic update ([358e6ef](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/commits/358e6efa12e704acc3901b90f3953331a5b02441))
+
 # 1.0.0 (2021-08-19)
 
 
