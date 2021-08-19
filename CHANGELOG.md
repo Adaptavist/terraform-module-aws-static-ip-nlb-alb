@@ -1,3 +1,10 @@
+## [1.0.2](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/compare/v1.0.1...v1.0.2) (2021-08-19)
+
+
+### Bug Fixes
+
+* added prevent destroy for elastic ips ([4193283](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/commits/419328380f3c55f2722f901c394cb9eb373ef7bc))
+
 ## [1.0.1](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/compare/v1.0.0...v1.0.1) (2021-08-19)
 
 
