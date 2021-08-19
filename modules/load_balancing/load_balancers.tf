@@ -20,6 +20,7 @@ resource "aws_alb" "private" {
 resource "aws_lb" "nlb" {
   # checkov:skip=CKV_AWS_131:Skipping `Ensure that ALB drops HTTP headers` check. Only valid for Load Balancers of type application.
   # checkov:skip=CKV_AWS_150:not a company policy
+  # checkov:skip=CKV2_AWS_28:not a company policy
   name               = "${var.name}-public-nlb"
   internal           = false
   load_balancer_type = "network"
