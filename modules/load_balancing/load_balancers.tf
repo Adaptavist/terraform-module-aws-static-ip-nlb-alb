@@ -8,13 +8,13 @@ resource "aws_alb" "private" {
   drop_invalid_header_fields = true
   enable_deletion_protection = var.deletion_protection_enabled
 
-  tags = merge(var.tags, { "Avst:Service:Component" = "private-alb" })
-
   access_logs {
     bucket  = module.aws-s3-alb-logs.bucket_id
     prefix  = "private"
     enabled = true
   }
+
+  tags = merge(var.tags, { "Avst:Service:Component" = "private-alb" })
 }
 
 resource "aws_lb" "nlb" {
