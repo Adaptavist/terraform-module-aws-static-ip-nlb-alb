@@ -18,6 +18,8 @@ module "nlb_configurer" {
 
   name = var.name
 
+  alb_arn              = module.load_balancers.internal_alb_arn
+  nlb_arn              = module.load_balancers.external_alb_arn
   alb_dns_name         = module.load_balancers.internal_alb_dns_name
   alb_listener_port    = 443
   nlb_target_group_arn = module.load_balancers.nlb_target_group_arn

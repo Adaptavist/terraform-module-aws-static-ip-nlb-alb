@@ -1,5 +1,5 @@
 data "aws_iam_policy_document" "populate_target_group" {
-  # checkov:skip=CKV_AWS_111:putMetricData is available on all resources
+  # checkov:skip=CKV_AWS_111:these actions are available on all resources
   statement {
     actions = [
       "s3:ListBucket",
@@ -13,12 +13,21 @@ data "aws_iam_policy_document" "populate_target_group" {
 
   statement {
     actions = [
-      "elasticloadbalancing:Describe*",
+      "elasticloadbalancing:Describe*"
+    ]
+
+    resources = ["*"]
+    effect    = "Allow"
+    sid       = "ELBDescribe"
+  }
+
+  statement {
+    actions = [
       "elasticloadbalancing:RegisterTargets",
       "elasticloadbalancing:DeregisterTargets",
     ]
 
-    resources = [var.alb_arn, var.nlb_arn]
+    resources = [var.nlb_target_group_arn]
     effect    = "Allow"
     sid       = "ELB"
   }

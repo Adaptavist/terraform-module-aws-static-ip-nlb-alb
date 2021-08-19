@@ -23,7 +23,12 @@ module "nlb-target-group-configurer" {
   //attach_network_policy         = true
   attach_cloudwatch_logs_policy = true
   attach_policies               = true
-  policies                      = [aws_iam_policy.populate_target_group.arn, module.aws-s3-encrypted-private.s3_write_policy_arn]
+  number_of_policies            = 3
+  policies = [
+    aws_iam_policy.populate_target_group.arn,
+    module.aws-s3-encrypted-private.s3_write_policy_arn,
+    module.aws-s3-encrypted-private.s3_read_policy_arn
+  ]
 
   environment_variables = {
     ALB_DNS_NAME                      = var.alb_dns_name
@@ -34,9 +39,6 @@ module "nlb-target-group-configurer" {
     INVOCATIONS_BEFORE_DEREGISTRATION = var.invocations_before_deregistration
     CW_METRIC_FLAG_IP_COUNT           = var.cw_metric_flag_ip_count
   }
-
-  //vpc_subnet_ids         = []
-  //vpc_security_group_ids = []
 
   use_existing_cloudwatch_log_group = false
   //cloudwatch_logs_kms_key_id        = aws_kms_key.function.arn
