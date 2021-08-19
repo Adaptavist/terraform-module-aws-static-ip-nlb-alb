@@ -4,4 +4,8 @@ resource "aws_eip" "elastic-ips" {
   vpc              = true
   public_ipv4_pool = "amazon"
   tags             = var.tags
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
