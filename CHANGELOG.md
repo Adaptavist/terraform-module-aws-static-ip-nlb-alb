@@ -1,3 +1,10 @@
+## [1.0.4](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/compare/v1.0.3...v1.0.4) (2022-10-04)
+
+
+### Bug Fixes
+
+* removed deletion protection ([92aea23](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/commits/92aea236f09e99407651639bccb34dee828c490e))
+
 ## [1.0.3](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/compare/v1.0.2...v1.0.3) (2021-08-19)
 
 
