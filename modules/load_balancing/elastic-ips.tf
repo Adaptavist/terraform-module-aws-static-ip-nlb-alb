@@ -3,8 +3,4 @@ resource "aws_eip" "elastic-ips" {
   count            = length(var.public_subnets)
   vpc              = true
   tags = merge(var.tags, { "Avst:Service:Component" = "nlb-eip", "Name" = "nlb-eip" })
-
-  lifecycle {
-    prevent_destroy = true
-  }
 }
