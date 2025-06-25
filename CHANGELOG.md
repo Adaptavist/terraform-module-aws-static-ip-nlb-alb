@@ -1,3 +1,10 @@
+## [1.0.8](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/compare/v1.0.7...v1.0.8) (2025-06-25)
+
+
+### Bug Fixes
+
+* bumped alb logs s3 module ([3184d37](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/commits/3184d3778e93d56c29e16105a870d3bd88c6b786))
+
 ## [1.0.7](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/compare/v1.0.6...v1.0.7) (2025-06-25)
 
 
