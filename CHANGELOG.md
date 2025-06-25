@@ -1,3 +1,10 @@
+## [1.0.5](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/compare/v1.0.4...v1.0.5) (2025-06-25)
+
+
+### Bug Fixes
+
+* New version s3. ([493524c](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/commits/493524c6e03421907419f49d1902547a93fe2a2b))
+
 ## [1.0.4](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/compare/v1.0.3...v1.0.4) (2022-10-04)
 
 
