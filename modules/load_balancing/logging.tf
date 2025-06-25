@@ -1,6 +1,6 @@
 module "aws-s3-alb-logs" {
   source    = "cloudposse/lb-s3-bucket/aws"
-  version   = "0.13.0"
+  version   = "0.20.0"
   namespace = var.name
   stage     = var.tags["Avst:Stage:Name"]
   name      = "lb-logs"
