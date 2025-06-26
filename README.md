@@ -36,4 +36,3 @@ https://aws.amazon.com/blogs/networking-and-content-delivery/using-static-ip-add
 | internal\_alb\_arn | ARN of the internally facing ALB |
 | internal\_alb\_dns\_name | DNS name of the internally facing ALB |
 | internal\_alb\_zone\_id | Zone id of the internally facing ALB |
-
