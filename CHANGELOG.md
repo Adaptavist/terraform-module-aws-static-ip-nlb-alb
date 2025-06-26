@@ -1,3 +1,10 @@
+## [1.0.9](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/compare/v1.0.8...v1.0.9) (2025-06-26)
+
+
+### Bug Fixes
+
+* Removed VPC. ([bd651ea](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/commits/bd651ea4d6049545906a0fd41a95aa0bc29410d7))
+
 ## [1.0.8](http://bitbucket.org/adaptavistlabs/module-static-ip-nlb-alb/compare/v1.0.7...v1.0.8) (2025-06-25)
 
 
